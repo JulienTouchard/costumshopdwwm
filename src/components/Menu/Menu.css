@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#navbar>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    position: fixed;
+    width: 100vw;
+    box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.75);
+    height: 34px;
+}
+
+.innerMenu {
+    display: none;
+    flex-direction: column;
+    list-style-type: none;
+    position: absolute;
+    left:0;
+    top: 34px;
+}
+.innerMenu li{
+    padding: .5rem;
+}
+.dNone{
+    display: none;
+}
+.dBlock{
+    display: block;
+}
+.dFlex{
+    display: flex;
+}
+@media screen and (min-width:576px) {
+    .innerMenu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+    }
+
+    .burger i {
+        display: none;
+    }
+}
