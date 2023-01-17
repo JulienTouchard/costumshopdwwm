@@ -19,7 +19,7 @@ function displayMenu(){
     document.querySelector(".innerMenu").classList.toggle("dNone");
     document.querySelector(".innerMenu").classList.toggle("dFlex");
 }
-function Menu() {
+function Menu(props) {
     return (
         <div>
             <div className="logo">CostumShop</div>

@@ -1,9 +1,14 @@
+import React from 'react';
+import BoutiqueContext from '../../BoutiqueContext';
 import './Panier.css';
 const Panier = (props) => {
+    const boutiqueContext = React.useContext(BoutiqueContext);
     return (
         <div className="backPanier">
             <div className="panier">
-                <div className="closePanier">X</div>
+                <div className="closePanier" onClick={()=>{
+                    boutiqueContext.handleDisplayFrame("Cart");
+                }}>X</div>
                 <h3>Votre Panier : </h3>
                 <ul>
                     {/* Boucle Map sur le panier */}
