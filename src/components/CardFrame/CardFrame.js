@@ -4,10 +4,11 @@ function CardFrame(props) {
     return (
         <div className="cardFrame">
             {
-                props.data.map((value) => {
+                props.data.map((value,i) => {
                     return (
                         <Card
                             data={value}
+                            key = {i}
                        ></Card>
                     )
                 })

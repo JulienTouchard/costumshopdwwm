@@ -15,12 +15,14 @@ class Root extends React.Component {
             data: articles,
             displayFramesPanier:false,
             displayFramesRegister:false,
-            handleDisplayFrame:this.handleDisplayFrame.bind(this)
+            panier:[],
+            handleDisplayFrame:this.handleDisplayFrame.bind(this),
+            achat:this.achat.bind(this),
+            remove:this.remove.bind(this)
         }
         //this.handleDisplayFrame = this.handleDisplayFrame.bind(this);
     }
     handleDisplayFrame(value){
-        console.log(value)
         if(value === "Cart"){
             this.setState(()=>{
                 return {
@@ -28,6 +30,32 @@ class Root extends React.Component {
                 }
             })
         }
+    }
+    achat(id){
+        // je dois decrémenter la quantité du this.state.data[id] qui vient d'être acheté
+        let panierTmp = this.state.panier;
+        let dataTmp = this.state.data;
+        dataTmp[id].qte -= 1;
+        panierTmp.push(id);
+        this.setState(()=>{
+            return {
+                data:dataTmp,
+                panier:panierTmp
+            }
+        })
+    }
+    remove(i,id){
+        console.log(i)
+        let panierTmp = this.state.panier;
+        let dataTmp = this.state.data;
+        dataTmp[id].qte += 1;
+        panierTmp.splice(i,1);
+        this.setState(()=>{
+            return {
+                data:dataTmp,
+                panier:panierTmp
+            }
+        })
     }
     render() {
         return (

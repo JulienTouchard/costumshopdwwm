@@ -3,7 +3,6 @@ import BoutiqueContext from '../../BoutiqueContext';
 import './Menu.css';
 function MenuButton(props){
     const boutiqueContext = useContext(BoutiqueContext);
-    console.dir(boutiqueContext);
     // j'ai besoin de recup le texte de mon lien et son url
     return(
         <li onClick={

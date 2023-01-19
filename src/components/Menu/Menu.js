@@ -29,12 +29,11 @@ function Menu(props) {
                  La seule boucle utilisable en JSX est la boucle array.map() :
                  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
                  */
-                 menuContent.map((value)=>{
-                    console.dir(value);
+                 menuContent.map((value,i)=>{
                     // pour retourner à nouveau du JSX je doit dans ma fonction
                     // callback utiliser un return
                     return(
-                       <MenuButton texte={value.text} url={value.url}></MenuButton> 
+                       <MenuButton key={i} texte={value.text} url={value.url}></MenuButton> 
                     )
                  })
                 }

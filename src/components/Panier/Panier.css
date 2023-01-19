@@ -17,3 +17,30 @@
     font-weight: 900;
     font-size: 2rem;
 }
+.panier li{
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+}
+.panier li span{
+    padding: 0 .5rem;
+}
+.panier h3{
+    margin: 3rem;
+}
+.total{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    margin-right: 2rem;
+}
+.totalPanier{
+    padding-right: 2rem;
+}
+.morePanier,.lessPanier{
+    font-size: 1rem;
+    font-weight: 900;
+}
+.morePanier:hover,.lessPanier:hover{
+    cursor: pointer;
+}

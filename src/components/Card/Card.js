@@ -1,9 +1,8 @@
 import CardButton from "./CardButton";
 import './Card.css';
 function Card(props) {
-    console.dir(props);
     return (
-        <div>
+        <div className="card">
             <img src={props.data.url} alt="" />
             <div>
                 <div className="name">{props.data.name}</div>
@@ -11,7 +10,7 @@ function Card(props) {
 
             </div>
             <div className="buttonCard">
-                <CardButton qteCard={props.data.qte}></CardButton>
+                <CardButton id={props.data.id}></CardButton>
             </div>
         </div>
     )
