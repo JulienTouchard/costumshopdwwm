@@ -4,6 +4,7 @@ import './Menu.css';
 function MenuButton(props){
     const boutiqueContext = useContext(BoutiqueContext);
     // j'ai besoin de recup le texte de mon lien et son url
+
     return(
         <li onClick={
             ()=>{
@@ -12,6 +13,7 @@ function MenuButton(props){
             
         }>
             <a href={props.url}>{props.texte}</a>
+            
         </li>
     )
 }

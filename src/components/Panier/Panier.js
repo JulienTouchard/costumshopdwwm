@@ -2,8 +2,10 @@ import React from 'react';
 import BoutiqueContext from '../../BoutiqueContext';
 import './Panier.css';
 const Panier = (props) => {
-    let total = 0;
+   let qteTmp = 0;
+    let qteDisplay;
     const boutiqueContext = React.useContext(BoutiqueContext);
+    boutiqueContext.panier.sort();
     if (boutiqueContext.panier.length > 0) {
         return (
             <div className="backPanier">
@@ -17,25 +19,38 @@ const Panier = (props) => {
                         {
                             boutiqueContext.panier.map((value, i) => {
                                 let article = boutiqueContext.data[value];
-                                total += article.price;
-                                return (
-                                    <li key={i}>
-                                        <span className="namePanier">{article.name}</span>
-                                        <span>
-                                            <span className="morePanier" onClick={()=>boutiqueContext.achat(value)}>+</span>
-                                            <span className="qtePanier">{article.qte}</span>
-                                            <span className="lessPanier" onClick={()=>boutiqueContext.remove(i,value)}>-</span>
-                                            <span className="pricePanier">{article.price} € TTC</span>
-                                            <span className="removePanier"></span>
-                                        </span>
-                                    </li>
-                                )
+                                if(value !== boutiqueContext.panier[i+1]){
+                                    qteDisplay = qteTmp+1;
+                                    qteTmp = 0;
+                                    return (
+                                        <li key={i}>
+                                            <span className="namePanier">{article.name}</span>
+                                            <span>
+                                                {
+                                                    boutiqueContext.data[value].qte > 0 ?
+                                                    <span className="morePanier" onClick={()=>boutiqueContext.achat(value)}>+</span> :
+                                                    <></>
+                                                }
+                                                
+                                                
+                                                <span className="qtePanier">{qteDisplay}</span>
+                                                <span className="lessPanier" onClick={()=>boutiqueContext.remove(i,value)}>-</span>
+                                                <span className="pricePanier">{article.price} € TTC</span>
+                                                <span className="removePanier" onClick={()=>boutiqueContext.removeAll(value)}>Poubelle</span>
+                                            </span>
+                                        </li>
+                                    )
+
+                                } else {
+                                    qteDisplay = qteTmp+1;
+                                    qteTmp++
+                                }
+                                
                             })
                         }
-
                     </ul>
                     <div className='total'>
-                        <span className="totalPanier">{ total } € TTC </span>
+                        <span className="totalPanier">{ boutiqueContext.totalPanier } € TTC </span>
                         <button className="achatPanier">Acheter</button>
                     </div>
                 </div>

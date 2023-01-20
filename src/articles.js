@@ -5,7 +5,7 @@ const articles = [
         url: "./assets/img/costumes/lapin.jpg",
         price: 400,
         promo: true,
-        qte: 200,
+        qte: 10,
         description: "Costume 100% pure laine vierge. Anti allergène. Existe en plusieurs coloris. De grands moments pour vos soirées ..."
     },
     {
@@ -14,7 +14,7 @@ const articles = [
         url: "./assets/img/costumes/shopping.webp",
         price: 350,
         promo: false,
-        qte: 200,
+        qte: 5,
         description: "Costume 100% pure laine vierge. blabla"
     },
     {
@@ -23,7 +23,7 @@ const articles = [
         url: "./assets/img/costumes/aerobic.jpg",
         price: 500,
         promo: true,
-        qte: 200,
+        qte: 8,
         description: "Costume 100% pure laine vierge. blabla"
     },
     {
@@ -32,7 +32,7 @@ const articles = [
         url: "./assets/img/costumes/mario.jpg",
         price: 500,
         promo: true,
-        qte: 200,
+        qte: 15,
         description: "Costume 100% pure laine vierge. blabla"
     },
     {
@@ -41,7 +41,7 @@ const articles = [
         url: "./assets/img/costumes/poulet.jpg",
         price: 500,
         promo: true,
-        qte: 200,
+        qte: 7,
         description: "Costume 100% pure laine vierge. blabla"
     },
     {
@@ -50,7 +50,7 @@ const articles = [
         url: "./assets/img/costumes/sushi.jpg",
         price: 500,
         promo: true,
-        qte: 200,
+        qte: 9,
         description: "Costume 100% pure laine vierge. blabla"
     },
     {
@@ -59,7 +59,7 @@ const articles = [
         url: "./assets/img/costumes/queen.jpg",
         price: 500,
         promo: true,
-        qte: 200,
+        qte: 20,
         description: "Costume 100% pure laine vierge. blabla"
     },
 ];
